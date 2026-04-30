@@ -1,3 +1,161 @@
+
+# 🚑 Sistema de Urgencias Médicas
+
+Sistema web desarrollado en **Laravel** para la gestión de servicios de urgencias médicas, permitiendo el control de pacientes, atención clínica y administración hospitalaria en tiempo real.
+
+---
+
+## 🚀 Descripción
+
+El **Sistema de Urgencias Médicas** es una plataforma diseñada para optimizar la atención en áreas de emergencia, facilitando el registro, seguimiento y tratamiento de pacientes de manera eficiente.
+
+Está orientado a clínicas, hospitales y centros de salud que requieren una solución digital para mejorar sus procesos.
+
+---
+
+## 🎯 Objetivos
+
+- Mejorar la atención de pacientes en urgencias  
+- Reducir tiempos de espera  
+- Centralizar la información clínica  
+- Facilitar la toma de decisiones médicas  
+
+---
+
+## ✨ Características
+
+### 🧑‍⚕️ Gestión de Pacientes
+- Registro de pacientes
+- Historial clínico
+- Clasificación por nivel de urgencia (triage)
+
+### 🏥 Atención Médica
+- Asignación de médicos
+- Registro de diagnósticos
+- Control de tratamientos
+
+### 📊 Administración
+- Gestión de usuarios (admin, médicos, enfermería)
+- Reportes y estadísticas
+- Control de ingresos y egresos
+
+### ⏱️ Seguimiento en Tiempo Real
+- Estado del paciente (en espera, en atención, alta)
+- Monitoreo de flujo de urgencias
+
+---
+
+## 🧱 Tecnologías utilizadas
+
+- **Framework:** Laravel  
+- **Backend:** PHP  
+- **Frontend:** Blade, HTML, CSS, JavaScript  
+- **Base de datos:** MySQL  
+- **Servidor:** Apache / Nginx  
+
+---
+
+## 🏗️ Estructura del Proyecto
+
+```bash id="treeurgencias"
+📦 sistema-urgencias
+ ┣ 📂 app
+ ┃ ┣ 📂 Http
+ ┃ ┃ ┣ 📂 Controllers
+ ┃ ┃ ┗ 📂 Middleware
+ ┃ ┣ 📂 Models
+ ┣ 📂 resources
+ ┃ ┣ 📂 views
+ ┃ ┗ 📂 js
+ ┣ 📂 routes
+ ┃ ┗ 📜 web.php
+ ┣ 📂 database
+ ┃ ┣ 📂 migrations
+ ┃ ┗ 📂 seeders
+ ┣ 📜 .env
+ ┣ 📜 artisan
+ ┗ 📜 README.md
+```
+
+---
+
+## 🧪 Instalación
+
+# Clonar repositorio
+```
+git clone https://github.com/tu-usuario/sistema-urgencias.git
+```
+
+# Entrar al proyecto
+```
+cd sistema-urgencias
+```
+
+# Instalar dependencias
+```
+composer install
+```
+
+# Configurar entorno
+```
+cp .env.example .env
+```
+
+# Generar clave de aplicación
+```
+php artisan key:generate
+```
+
+# Configurar base de datos en .env
+
+# Ejecutar migraciones
+```
+php artisan migrate
+```
+
+# Iniciar servidor
+```
+php artisan serve
+```
+
+---
+
+## ⚙️ Configuración
+
+- Edita el archivo .env con tus credenciales de base de datos
+- Configura el sistema de correo (opcional)
+- Ajusta variables de entorno según tu servidor
+
+---
+
+## 🔐 Seguridad 
+
+- Autenticación de usuarios integrada (Laravel Auth)
+- Protección contra CSRF y XSS
+- Encriptación de contraseñas
+- Control de roles y permisos
+
+---
+
+## 📈 Estado del Proyecto
+
+🟢 Funcional / En desarrollo continuo
+
+---
+
+## 👨‍💻 Autor
+
+**Isai Reyes**
+
+---
+
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT.
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
