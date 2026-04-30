@@ -1,0 +1,28 @@
+[2025-09-22 10:23:16] production.INFO: Broadcasting [PatientStatusUpdated] on channels [panel-pacientes] with payload:
+{
+    "categoria_codigo": "esi-3",
+    "estado_nombre": "Ingresado",
+    "cantidad": 1,
+    "socket": null
+}  
+[2025-09-22 10:23:29] production.INFO: Broadcasting [PatientStatusUpdated] on channels [panel-pacientes] with payload:
+{
+    "categoria_codigo": "esi-3",
+    "estado_nombre": "En espera de atencion",
+    "cantidad": 1,
+    "socket": null
+}  
+[2025-09-22 10:23:53] production.INFO: Broadcasting [PatientStatusUpdated] on channels [panel-pacientes] with payload:
+{
+    "categoria_codigo": "esi-3",
+    "estado_nombre": "En atencion",
+    "cantidad": 1,
+    "socket": null
+}  
+[2025-09-22 10:24:12] production.INFO: Broadcasting [PatientStatusUpdated] on channels [panel-pacientes] with payload:
+{
+    "categoria_codigo": "esi-3",
+    "estado_nombre": "Dado de Alta",
+    "cantidad": 1,
+    "socket": null
+}  

@@ -1,0 +1,16 @@
+# Ignorar directorios y archivos específicos
+node_modules
+storage
+.git
+*.log
+*.tmp
+*.bak
+*.DS_Store
+.idea
+.vscode
+.env
+docker-compose.override.yml
+
+# Ignorar archivos temporales y de sistema
+*.log
+*.tmp

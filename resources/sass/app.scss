@@ -1,0 +1,29 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Importa funciones de Bootstrap (si usas personalización)
+@import "node_modules/bootstrap/scss/functions";
+
+// Importa Bootstrap completo
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+.bg-orange {
+    background-color: #fd7e14 !important;
+}
+.border-orange {
+    border-color: #fd7e14 !important;
+}
+.text-orange {
+    color: #fd7e14 !important;
+}
+.progress-bar.bg-orange {
+    background-color: #fd7e14 !important;
+}
+

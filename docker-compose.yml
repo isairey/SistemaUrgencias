@@ -1,0 +1,103 @@
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: urgencia_app
+        working_dir: /var/www
+        volumes:
+            - '.:/var/www'
+            - './docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini'
+        ports:
+            - '9200:9000'
+            - '5173:5173'
+        depends_on:
+            - soketi
+            - mysql
+            - redis
+        networks:
+            - urgencia_net
+    webserver:
+        image: 'nginx:alpine'
+        container_name: urgencia_web
+        ports:
+            - '8081:80'
+        volumes:
+            - '.:/var/www'
+            - './docker/nginx/conf.d:/etc/nginx/conf.d'
+        depends_on:
+            - app
+        networks:
+            - urgencia_net
+    mysql:
+        image: 'mysql:8.0'
+        container_name: urgencia_mysql
+        restart: always
+        environment:
+            MYSQL_DATABASE: urgencia_adulto
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: urgencia_user
+            MYSQL_PASSWORD: Urg3ncia2025!
+        ports:
+            - '3307:3306'
+        volumes:
+            - 'urgencia_mysql_data:/var/lib/mysql'
+        networks:
+            - urgencia_net
+    soketi:
+        image: 'quay.io/soketi/soketi:latest-16-alpine'
+        container_name: urgencia_soketi
+        environment:
+            - DEBUG=1
+            - SERVER_PORT=6001
+            - 'APP_ID=${PUSHER_APP_ID}'
+            - 'APP_KEY=${PUSHER_APP_KEY}'
+            - 'APP_SECRET=${PUSHER_APP_SECRET}'
+        ports:
+            - '6001:6001'
+        networks:
+            - urgencia_net
+    redis:
+        image: 'redis:alpine'
+        container_name: urgencia_redis
+        command:
+            - redis-server
+            - '--appendonly'
+            - 'yes'
+        ports:
+            - '6379:6379'
+        volumes:
+            - 'urgencia_redis_data:/data'
+        networks:
+            - urgencia_net
+        restart: unless-stopped
+        healthcheck:
+            test:
+                - CMD
+                - redis-cli
+                - ping
+            interval: 10s
+            timeout: 3s
+            retries: 5
+    queue:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: urgencia_queue
+        working_dir: /var/www
+        volumes:
+            - '.:/var/www'
+        depends_on:
+            - app
+            - redis
+            - mysql
+        networks:
+            - urgencia_net
+        command: 'php artisan queue:work --sleep=1 --tries=3'
+        restart: unless-stopped
+volumes:
+    urgencia_mysql_data: null
+    urgencia_redis_data: null
+networks:
+    urgencia_net:
+        driver: bridge
