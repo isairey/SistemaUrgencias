@@ -83,12 +83,12 @@ Está orientado a clínicas, hospitales y centros de salud que requieren una sol
 
 # Clonar repositorio
 ```
-git clone https://github.com/tu-usuario/sistema-urgencias.git
+git clone https://github.com/isairey/SistemaUrgencias.git
 ```
 
 # Entrar al proyecto
 ```
-cd sistema-urgencias
+cd SistemaUrgencias
 ```
 
 # Instalar dependencias
